@@ -1,6 +1,6 @@
 {
     "name": "titoi/bienesraices",
-    "description": "Proyect html SASS GULP PHP",
+    "description": "Proyect html SASS GULP PHP OOP MVC",
     "type": "project",
     "authors": [
         {
@@ -10,7 +10,9 @@
     ],
     "autoload": {
         "psr-4": {
-            "App\\": "./classes"
+            "Model\\": "./models",
+            "MVC\\":"./",
+            "Controllers\\":"./controllers"
         }
     },
     "require": {

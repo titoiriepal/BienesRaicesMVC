@@ -2,7 +2,7 @@
      
 
 
-namespace App;
+namespace Model;
 
 class ActiveRecord{
 
