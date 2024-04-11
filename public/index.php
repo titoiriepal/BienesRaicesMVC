@@ -11,5 +11,9 @@ $router->get('/admin', [PropiedadController::class, 'index']);//Registra  la rut
 $router->get('/propiedades/crear', [PropiedadController::class, 'crear']);
 $router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
 
+$router->post('/admin', [PropiedadController::class, 'index']);//Registra  la ruta para el index de la pagina principal
+$router->post('/propiedades/crear', [PropiedadController::class, 'crear']);
+$router->post('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
+
 
 $router->comprobarRutas();

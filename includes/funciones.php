@@ -2,9 +2,9 @@
 
 <?php 
 
-    define('TEMPLATES_URL', __DIR__ . '/templates');
+    define('TEMPLATES_URL', __DIR__ . '/../views/templates/');
     define('FUNCIONES_URL', __DIR__ . 'funciones.php');
-    define('CARPETA_IMAGENES', __DIR__ . '/../imagenes/');
+    define('CARPETA_IMAGENES', __DIR__ . '/../public/imagenes/');
     
 
 function incluirTemplate (string $nombre, bool $inicio = false){
@@ -87,4 +87,22 @@ function mostrarNotificación($codigo) { //Devuelve un mensaje de error y la cla
      ;}
 
      return [$mensaje,$clase];
+}
+
+function imageExtension(string $type): string{
+    switch ($type) {
+        case 'image/png':
+            $extension = '.png';
+            break;
+        
+        case 'image/webp':
+            $extension = '.webp';
+            break;
+        
+        default:
+            $extension = '.jpg';
+            break;
+    }    
+
+    return $extension;
 }
