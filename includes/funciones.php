@@ -4,7 +4,7 @@
 
     define('TEMPLATES_URL', __DIR__ . '/../views/templates/');
     define('FUNCIONES_URL', __DIR__ . 'funciones.php');
-    define('CARPETA_IMAGENES', __DIR__ . '/../public/imagenes/');
+    define('CARPETA_IMAGENES', $_SERVER['DOCUMENT_ROOT'] . '/imagenes/');
     
 
 function incluirTemplate (string $nombre, bool $inicio = false){
@@ -105,4 +105,14 @@ function imageExtension(string $type): string{
     }    
 
     return $extension;
+}
+
+function validarORedireccionar(string $url) {
+    $idPropiedad = filter_var($_GET['id'],FILTER_VALIDATE_INT) ;
+    if($idPropiedad != true){
+        header('location: ' . $url);
+        
+    }
+
+    return $idPropiedad;
 }
