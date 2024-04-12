@@ -14,6 +14,7 @@ $router->get('/propiedades/actualizar', [PropiedadController::class, 'actualizar
 $router->post('/propiedades/eliminar', [PropiedadController::class, 'index']);//Registra  la ruta para el index de la pagina principal
 $router->post('/propiedades/crear', [PropiedadController::class, 'crear']);
 $router->post('/propiedades/actualizar', [PropiedadController::class, 'actualizar']);
+$router->post('/propiedades/eliminar', [PropiedadController::class, 'eliminar']);
 
 
 $router->comprobarRutas();

@@ -84,8 +84,6 @@ class PropiedadController{
 
     public static function actualizar(Router $router){
 
-
-
         $idPropiedad = validarORedireccionar('/admin?message=2');
         
 
@@ -112,9 +110,7 @@ class PropiedadController{
             $imagen = $_FILES[ 'imagen' ] ?? '';
              
             $errores = $propiedad->validar();
-            //Comprobar que existe la imagen y que pesa menos de 200KB
-
-            
+            //Comprobar que existe la imagen y que pesa menos de 200KB   
     
             $limiteKB=2000000; //Limite de 2MB para las imagenes
             if(!$imagen['name'] && !$propiedad->imagen){
@@ -126,11 +122,8 @@ class PropiedadController{
                 $errores[] = "El archivo es demasiado grande. El tamaño máximo permitido son " . $limiteKB / 1000 . "KB";
             }
 
-            
-    
             if(empty($errores)){
-    
-    
+
                 if($imagen['name']){ //Si se ha elegido una imagen, cambiamos la imagen elegida
     
                     //Crear Carpeta
@@ -146,8 +139,7 @@ class PropiedadController{
                             unlink(CARPETA_IMAGENES. $propiedad->imagen);
                         }
                     }
-        
-        
+              
                     /**Subida de archivos*/
         
                     //Subir la imagen
@@ -186,6 +178,32 @@ class PropiedadController{
             'errores' => $errores
         ]);
 
+    }
+
+    public static function eliminar (){
+
+        $id = filter_var($_POST['idPropiedad'], FILTER_VALIDATE_INT);
+
+        if($id){
+            $propiedad = Propiedad::find($id);
+            $resultado = $propiedad->eliminar();
+            //Eliminar la imagen del servidor
+
+            if($resultado){
+                $nombreImagen = $propiedad->imagen; 
+
+                if(file_exists(CARPETA_IMAGENES. $nombreImagen)){
+                    unlink(CARPETA_IMAGENES . $nombreImagen);
+                }      
+                
+                header('location: /admin?message=5');
+            }else{
+                header('location: /admin');
+            }
+        }else{
+            header('location: /admin?message=3');
+        }
+        
     }
 
 }

@@ -33,7 +33,7 @@
                     <td><?php echo $propiedad->precio?> €</td>
                     <td class= "acciones">
                         <a class="boton boton-amarillo-block" href="/propiedades/actualizar?id=<?php echo $propiedad->id?>">Actualizar</a>
-                        <form action="" method="POST" class="w-100">
+                        <form method="POST" class="w-100" action="/propiedades/eliminar">
                             <input type="hidden" name="idPropiedad" value="<?php echo $propiedad->id?>">
                             <input type="submit" class="boton boton-rojo-block" value="Eliminar">
                         </form>
@@ -70,8 +70,8 @@
                     <td><?php echo $vendedor->apellidos?></td>
                     <td><?php echo $vendedor->telefono?></td>
                     <td class= "acciones">
-                        <a class="boton boton-amarillo-block" href="/vendedores/actualizar.php?id=<?php echo $vendedor->id?>">Actualizar</a>
-                        <form action="" method="POST" class="w-100">
+                        <a class="boton boton-amarillo-block" href="/vendedores/actualizar?id=<?php echo $vendedor->id?>">Actualizar</a>
+                        <form action="/vendedores/eliminar" method="POST" class="w-100">
                             <input type="hidden" name="idVendedor" value="<?php echo $vendedor->id?>">
                             <input type="submit" class="boton boton-rojo-block" value="Eliminar">
                         </form>
