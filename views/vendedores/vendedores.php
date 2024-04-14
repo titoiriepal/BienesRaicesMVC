@@ -1,5 +1,9 @@
+<?php 
+    $pagina =  ($_GET['id']) ?  "Actualizar Vendedor" : "Crear Vendedor";
+?>
+
 <main class="contenedor seccion">
-        <h1>Crear Vendedor</h1>
+        <h1><?php echo $pagina ?></h1>
         <a href="/admin" class="boton boton-verde">Página de Administración</a>
         <a href="javascript:history.back()" class="boton boton-verde">Volver</a>
 
@@ -13,12 +17,12 @@
 
         </div>
 
-        <form class="formulario" method="POST" action="/vendedores/crear">
+        <form class="formulario" method="POST">
             <?php 
-                include TEMPLATES_URL."/formulario_vendedores.php";
+                include TEMPLATES_URL."/formulario_vendedores.php"; 
             ?>
 
-            <input type="submit" value="Crear Vendedor" class="boton boton-verde">
+            <input type="submit" value="<?php echo $pagina ?>" class="boton boton-verde">
 
 
         </form>

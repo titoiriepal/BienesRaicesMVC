@@ -28,7 +28,7 @@ class VendedorController{
 
         }
 
-        $router->render('vendedores/crear',[
+        $router->render('vendedores/vendedores',[
             'vendedor' => $vendedor,
             'errores' => $errores
         ]);
@@ -62,7 +62,7 @@ class VendedorController{
             }
         }
 
-        $router->render('vendedores/actualizar',[
+        $router->render('vendedores/vendedores',[
             'vendedor' => $vendedor,
             'errores' => $errores
         ]);
