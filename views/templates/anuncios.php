@@ -1,17 +1,4 @@
 
-<?php
-
-use App\Propiedad;
-
-        if($_SERVER['SCRIPT_NAME'] === '/index.php'){
-            $propiedades= Propiedad::get(3);
-        }else if($_SERVER['SCRIPT_NAME'] === '/anuncios.php'){
-            $propiedades= Propiedad::get(9);
-        }
-    
-    
-          
-?>
 
 <div class="contenedor-anuncios">
 
@@ -42,7 +29,7 @@ use App\Propiedad;
                 </li>
             </ul>
 
-            <a href="anuncio.php?id=<?php echo $propiedad->id;?>" class="boton boton-amarillo-block">Ver Propiedad</a>
+            <a href="/anuncio?id=<?php echo $propiedad->id;?>" class="boton boton-amarillo-block">Ver Propiedad</a>
         </div><!-- .Contenido Anuncio -->
     </div><!--.anuncio-->
 <?php endforeach; ?>

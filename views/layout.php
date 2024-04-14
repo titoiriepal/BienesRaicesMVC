@@ -25,7 +25,7 @@
      <header class="header <?php echo $inicio ? 'inicio' : ''; ?>">
         <div class="contenedor contenido-header">
             <div class="barra">
-                <a href="/index.php">
+                <a href="/">
                     <img src="/build/img/logo.svg" height="50px" width="auto" alt="Logotipo de la empresa Bienes Raices">
                 </a>
 
@@ -37,13 +37,13 @@
 
                     <img src="/build/img/dark-mode.svg" alt="Botón para el dark mode" class="dark-mode-boton" width="50%" height="50%">
                     <nav class="navegacion">
-                        <a href="/nosotros.php">Nosotros</a>
-                        <a href="/anuncios.php">Anuncios</a>
-                        <a href="/blog.php">Blog</a>
-                        <a href="/contacto.php">Contacto</a>
+                        <a href="/nosotros">Nosotros</a>
+                        <a href="/anuncios">Anuncios</a>
+                        <a href="/blog">Blog</a>
+                        <a href="/contacto">Contacto</a>
                         <?php if($auth): ?>
                             
-                        <a href="/cerrar-sesion.php">Cerrar Sesión</a>
+                        <a href="/cerrar-sesion">Cerrar Sesión</a>
                              
                         <?php endif; ?>
                     </nav>
@@ -69,10 +69,10 @@
      <footer class="footer seccion">
         <div class="contenedor contenedor-footer">
             <nav class="navegacion">
-                <a href="/nosotros.php">Nosotros</a>
-                <a href="/anuncios.php">Anuncios</a>
-                <a href="/blog.php">Blog</a>
-                <a href="/contacto.php">Contacto</a>
+                <a href="/nosotros">Nosotros</a>
+                <a href="/anuncios">Anuncios</a>
+                <a href="/blog">Blog</a>
+                <a href="/contacto">Contacto</a>
             </nav>
             
         </div>

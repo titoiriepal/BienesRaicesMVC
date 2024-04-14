@@ -28,8 +28,6 @@ class Router{
             $fn = $this->rutasPOST[$urlActual] ?? null;
         }
 
-
-
         if ($fn){ //La URL existe en nuestro index.php y tiene una función asociada
             call_user_func($fn, $this);//Llamamos a la función con los parámetros que le pasamos
         }else{
