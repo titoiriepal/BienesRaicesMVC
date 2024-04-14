@@ -19,7 +19,7 @@
 
         <form class="formulario" method="POST">
             <?php 
-                include TEMPLATES_URL."/formulario_vendedores.php"; 
+                include __DIR__ . '/formulario.php'; 
             ?>
 
             <input type="submit" value="<?php echo $pagina ?>" class="boton boton-verde">
