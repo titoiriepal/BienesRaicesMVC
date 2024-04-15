@@ -102,6 +102,21 @@ class ActiveRecord{
         
     }
 
+    public static function findby(string $campo, string $valor) {
+
+        $query = "SELECT * FROM " . static::$tabla ." WHERE  " . $campo . " = '" . $valor . "' LIMIT 1";
+        $resultado = self::consultarSQL($query);
+
+        if(!$resultado){
+            self::$errores['El regsitro no existe'];
+            return;
+        }
+
+        return array_shift($resultado);
+
+    }
+
+
 
     public static function consultarSQL($query){ //Consulta la base de datos y devuelve un array con todos los resultados que haya generado la consulta
         //Consultar la BD

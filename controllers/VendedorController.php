@@ -6,7 +6,10 @@ use Model\Vendedor;
 
 class VendedorController{
 
+
     public static function crear(Router $router){
+
+        estaAutorizado();
 
         $vendedor = new Vendedor();
 
@@ -35,6 +38,8 @@ class VendedorController{
     }
 
     public static function actualizar(Router $router){
+
+        estaAutorizado();
 
         $idVendedor = validarORedireccionar('/admin?message=2');
     
@@ -70,6 +75,9 @@ class VendedorController{
     }
 
     public static function eliminar(){
+
+        estaAutorizado();
+        
         $id = filter_var($_POST['idVendedor'], FILTER_VALIDATE_INT);
 
         if($id){

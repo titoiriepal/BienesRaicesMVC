@@ -9,7 +9,7 @@ use PHPMailer\PHPMailer\PHPMailer;
 
 
 
-class AdminController{
+class PaginasController{
 
     public static function index(Router $router){
         $propiedades= Propiedad::get(3);

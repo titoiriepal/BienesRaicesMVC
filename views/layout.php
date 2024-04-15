@@ -41,11 +41,14 @@
                         <a href="/anuncios">Anuncios</a>
                         <a href="/blog">Blog</a>
                         <a href="/contacto">Contacto</a>
-                        <?php if($auth): ?>
+                        <?php if($auth){ ?>
                             
-                        <a href="/cerrar-sesion">Cerrar Sesión</a>
+                            <a href="/logout">Cerrar Sesión</a>
+                            <a href="/admin">Página de Administración</a>
                              
-                        <?php endif; ?>
+                        <?php } else {  ?>
+                            <a href="/login">Iniciar Sesión</a>
+                        <?php } ?>
                     </nav>
                     
 

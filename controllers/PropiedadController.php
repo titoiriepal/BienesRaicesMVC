@@ -10,6 +10,8 @@ use Intervention\Image\Drivers\Gd\Driver;
 class PropiedadController{
 
     public static function index(Router $router){
+
+        estaAutorizado();
         
         $propiedades = Propiedad::all();
         $vendedores = Vendedor::all();
@@ -25,6 +27,8 @@ class PropiedadController{
     }
     
     public static function crear(Router $router){
+
+        estaAutorizado();
         
         $propiedad = new Propiedad();
         $vendedores = Vendedor::all();
@@ -83,6 +87,8 @@ class PropiedadController{
     }
 
     public static function actualizar(Router $router){
+
+        estaAutorizado();
 
         $idPropiedad = validarORedireccionar('/admin?message=2');
         
@@ -181,6 +187,8 @@ class PropiedadController{
     }
 
     public static function eliminar (){
+
+        estaAutorizado();
 
         $id = filter_var($_POST['idPropiedad'], FILTER_VALIDATE_INT);
 
